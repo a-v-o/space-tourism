@@ -45,5 +45,5 @@ How to use NextJS folder navigation
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/a-v-o)
-- Twitter - [@yourusername](https://www.twitter.com/mellamofunmito)
+- Frontend Mentor - [@a-v-o](https://www.frontendmentor.io/profile/a-v-o)
+- Twitter - [@mellamofunmito](https://www.twitter.com/mellamofunmito)
