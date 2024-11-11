@@ -58,7 +58,7 @@ export default function Page({ params }: { params: { member: number } }) {
                           "w-[10px] h-[10px] md:w-[15px] md:h-[15px] rounded-full",
                           {
                             "bg-white": index == params.member,
-                            "bg-[#979797]": index != params.member,
+                            "bg-white bg-opacity-25 hover:bg-opacity-50": index != params.member,
                           }
                         )}
                       ></div>
@@ -67,7 +67,7 @@ export default function Page({ params }: { params: { member: number } }) {
                 ))}
               </ul>
             </div>
-            <div className="flex w-[270px] h-[340px] md:w-full md:h-full justify-center lg:justify-start items-center">
+            <div className="flex w-[270px] max-h-[340px] md:w-full md:max-h-full lg:self-end lg:pb-[48px] justify-center lg:justify-start items-center">
               <Image
                 src={member.images.png}
                 alt={member.name}

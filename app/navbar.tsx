@@ -6,8 +6,12 @@ import Link from "next/link";
 import "./globals.css";
 import { useState } from "react";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const path = pathname.slice(1);
+
   const spanClass = "w-[24px] h-[3px] bg-white transition-all";
   const first = "rotate-45 translate-y-[9px] " + spanClass;
   const second = "opacity-0 " + spanClass;
@@ -35,6 +39,13 @@ export default function Navbar() {
     }
   };
 
+  const links = [
+    { name: "home", href: "/" },
+    { name: "destination", href: "/destinations/moon" },
+    { name: "crew", href: "/crew/0" },
+    { name: "technology", href: "/technology/0" },
+  ];
+
   return (
     <header
       className={`${barlowCond.className} ${barlowCond.className} antialiased`}
@@ -47,10 +58,10 @@ export default function Navbar() {
               alt="Logo for the space tourism website"
               width={0}
               height={0}
-              className="w-12 h-12"
+              className="min-w-12 h-12"
             ></Image>
           </Link>
-          <hr className="text-white h-1 w-0 md:w-full opacity-25 z-10 -mr-[32px]" />
+          <hr className="text-white h-1 w-0 md:w-full opacity-25 z-30 -mr-[32px]" />
         </div>
         <div
           className="z-20 flex flex-col w-full h-full gap-[6px] md:hidden justify-center items-end pr-6"
@@ -69,30 +80,25 @@ export default function Navbar() {
             }
           )}
         >
-          <li>
-            <Link href="/" className="flex gap-3">
-              <p className="font-bold tracking-[2.7px]">00</p>
-              <p>HOME</p>{" "}
-            </Link>
-          </li>
-          <li>
-            <Link href="/destinations/moon" className="flex gap-3">
-              <p className="font-bold tracking-[2.7px]">01</p>
-              <p>DESTINATION</p>{" "}
-            </Link>
-          </li>
-          <li>
-            <Link href="/crew/0" className="flex gap-3">
-              <p className="font-bold tracking-[2.7px]">02</p>
-              <p>CREW</p>{" "}
-            </Link>
-          </li>
-          <li>
-            <Link href="/technology/0" className="flex gap-3">
-              <p className="font-bold tracking-[2.7px]">03</p>
-              <p>TECHNOLOGY</p>{" "}
-            </Link>
-          </li>
+          {links.map((link, index) => (
+            <li key={link.name} className="md:h-full">
+              <Link
+                href={link.href}
+                className={clsx("flex items-center gap-3 h-full", {
+                  "border-solid border-white border-r-2 md:border-r-0 md:border-b-2":
+                    (path.includes(link.href.substring(1, 3)) &&
+                      link.href != "/") ||
+                    (path == "" && link.href == "/"),
+                  "hover:border-solid hover:border-opacity-50 hover:border-white md:hover:border-b-2":
+                    !path.includes(link.href.substring(1)) ||
+                    (path != "" && link.href == "/"),
+                })}
+              >
+                <p className="font-bold tracking-[2.7px]">{"0" + index}</p>
+                <p>{link.name.toUpperCase()}</p>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

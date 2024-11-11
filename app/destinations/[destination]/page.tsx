@@ -46,9 +46,12 @@ export default function Page({ params }: { params: { destination: string } }) {
                   <li key={destination.name} className={barlowCond.className}>
                     <Link
                       href={`/destinations/${destination.name.toLowerCase()}`}
-                      className={clsx({
+                      className={clsx("transition-all", {
                         "underline text-white decoration-white decoration-solid decoration-3 underline-offset-8":
                           params.destination.toLowerCase() ==
+                          destination.name.toLowerCase(),
+                        "hover:underline hover:decoration-white decoration-solid decoration-3 underline-offset-8":
+                          params.destination.toLowerCase() !=
                           destination.name.toLowerCase(),
                       })}
                     >

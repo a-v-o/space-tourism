@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div className="w-full h-full md:h-fit flex justify-center lg:justify-end items-center">
           <Link href="/destinations/moon" className={bellefair.className}>
-            <p className="w-[144px] h-[144px] md:w-[272px] md:h-[272px] rounded-full bg-white flex justify-center items-center text-[18px] md:text-3xl">
+            <p className="w-[144px] h-[144px] hover:shadow-[0_0_0_88px_rgba(255,255,255,0.1)] transition-all md:w-[272px] md:h-[272px] rounded-full bg-white flex justify-center items-center text-[18px] md:text-3xl">
               EXPLORE
             </p>
           </Link>

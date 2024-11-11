@@ -51,7 +51,8 @@ export default function Page({ params }: { params: { tech: number } }) {
                             "w-[40px] h-[40px] md:w-[56px] md:h-[56px] lg:w-[80px] lg:h-[80px] flex justify-center items-center rounded-full text-[18px] lg:text-[32px]",
                             {
                               "bg-white text-black": index == params.tech,
-                              "bg-[#979797]": index != params.tech,
+                              "border-solid border-2 border-opacity-25 border-white hover:border-opacity-50 transition-all":
+                                index != params.tech,
                             }
                           )}
                         >
