@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/navbar";
 import "./globals.css";
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 export const metadata: Metadata = {
   title: "Space Tourism",
@@ -15,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="overflow-y-scroll">
         <Navbar />
-        {children}
+        <ViewTransition name="page">{children}</ViewTransition>
       </body>
     </html>
   );
