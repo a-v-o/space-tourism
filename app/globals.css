@@ -10,23 +10,22 @@
 
 @keyframes slide-up {
   0% {
-    top: 0;
-    transform: translateY(100%);
+    transform: translateY(300%);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(200%);
   }
 }
 
 @keyframes exit {
   0% {
-    transform: translateY(0)
+    transform: translateY(200%)
   }
   40% {
-    transform: translateY(0)
+    transform: translateY(200%)
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(0);
   }
 }
 
