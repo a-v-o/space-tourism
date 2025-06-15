@@ -32,7 +32,7 @@
 
 
 ::view-transition-old(overlay) {
-  animation: slide-up 300ms linear backwards;
+  animation: slide-up 300ms linear 50ms backwards;
 }
 
 ::view-transition-new(overlay) {
