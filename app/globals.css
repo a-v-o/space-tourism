@@ -10,19 +10,19 @@
 
 @keyframes slide-up {
   0% {
-    transform: translateY(300%);
+    transform: translateY(300vh);
   }
   100% {
-    transform: translateY(200%);
+    transform: translateY(200vh);
   }
 }
 
 @keyframes exit {
   0% {
-    transform: translateY(200%)
+    transform: translateY(200vh)
   }
   40% {
-    transform: translateY(200%)
+    transform: translateY(200vh)
   }
   100% {
     transform: translateY(0);
@@ -31,7 +31,7 @@
 
 
 ::view-transition-old(overlay) {
-  animation: slide-up 300ms linear 50ms backwards;
+  animation: slide-up 300ms linear;
 }
 
 ::view-transition-new(overlay) {
