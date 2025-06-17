@@ -6,7 +6,7 @@ import * as motion from "motion/react-client";
 import PageTransition from "@/components/PageTransition";
 
 export default function Home() {
-  let delay = 0.4;
+  let delay = 1;
   return (
     <div>
       <PageTransition />

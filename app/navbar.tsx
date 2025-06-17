@@ -82,6 +82,9 @@ export default function Navbar() {
           style={{
             transitionDuration: "0.7s",
           }}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
           className={clsx(
             "z-20 transition-all tracking-[2px] flex flex-col md:flex-row text-[16px] md:justify-end gap-[32px] md:gap-12 -ml-2 text-white pt-[148px] md:pt-0 px-[32px] md:px-10 lg:px-16 bg-[#0B0D17] md:bg-white bg-opacity-15 md:bg-opacity-5 backdrop-blur-3xl md:items-center fixed top-0 md:relative w-[255px] md:w-full h-screen md:h-[96px]",
             {
@@ -129,6 +132,9 @@ export default function Navbar() {
       <div
         style={{
           transitionDelay: "0.25s",
+        }}
+        onClick={() => {
+          setClosed(true);
         }}
         className={clsx(
           "transition-all absolute top-0 left-0 w-screen h-screen md:w-0 z-10 bg-black bg-opacity-40",
